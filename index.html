@@ -4,26 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OOP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
   </head>
 
-  <body>
-    <main>
-      <section>
-        <form>
-          <input type="name" placeholder="Nome del tuo animale" id="petName" />
-          <input placeholder="Nome del proprietario" id="ownerName" />
-          <input placeholder="Inserisci la specie" id="species" />
-          <input placeholder="Inserisci la razza" id="breed" />
-          <button>INVIA</button>
+  <body class="bg-success-subtle">
+    <main class="d-flex flex-column justify-content-center">
+      <section class="d-flex flex-column justify-content-center">
+        <h1 class="text-center">Inserisci i tuoi dati</h1>
+        <form class="d-md-flex justify-content-center">
+          <input
+            class="rounded-2 m-2 text-center"
+            type="name"
+            placeholder="Nome del tuo animale"
+            id="petName"
+          />
+          <input
+            class="rounded-2 m-2 text-center"
+            placeholder="Nome del proprietario"
+            id="ownerName"
+          />
+          <input
+            class="rounded-2 m-2 text-center"
+            placeholder="Inserisci la specie"
+            id="species"
+          />
+          <input
+            class="rounded-2 m-2 text-center"
+            placeholder="Inserisci la razza"
+            id="breed"
+          />
+          <button class="btn bg-warning-subtle border border-warning border-2">
+            INVIA
+          </button>
         </form>
       </section>
-      <section>
-        <h3>LISTA CONTATTI</h3>
-        <button class="inviaForm">INVIA</button>
-        <ul id="list"></ul>
+      <section class="border border-warning rounded-5 mt-4">
+        <h3 class="fst-italic text-center">LISTA CONTATTI</h3>
+        <ul id="list" class="text-center"></ul>
+        <button
+          id="inviaForm"
+          class="btn bg-warning-subtle border border-warning border-2"
+        >
+          INVIA
+        </button>
       </section>
     </main>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
