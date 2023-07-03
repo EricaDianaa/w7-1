@@ -56,16 +56,14 @@ constructor(_petName, _ownerName, _species, _breed){
 }
 //creazione funzione (il padrone è lo stesso?)
 sameOwnerName(){
-  
- if ( this.ownerName ===padroni[1]) {
+  if(padroni.length>1){
+ if ( this.ownerName === padroni[1]) {
 return true
-
-    
  }
  else{
    return false
  }
-
+}
 }
 
 }
@@ -76,7 +74,7 @@ const addList=function(){
     ul.innerText= " "//lo svuoto
     list.forEach(Pet => {//creo per ogni pet un li a cui poi assegno il valore 
         const newLi= document.createElement("li")
-        newLi.innerText = `${Pet.petName}- ${Pet.ownerName} - ${Pet.species} - ${Pet.breed}`
+        newLi.innerText = `${Pet.petName} - ${Pet.ownerName} - ${Pet.species} - ${Pet.breed}`
         ul.appendChild(newLi)
   
     });
@@ -96,7 +94,7 @@ padroni.push(contact.ownerName)
 console.log( "PADRONI",padroni)
 
 //avvio la funzione  sameOwnerName al click del bottone
- let button=document.querySelector(".inviaForm")
+ let button=document.querySelector("#inviaForm")
  button.addEventListener("click", function(){
     console.log(contact.sameOwnerName())
  })
