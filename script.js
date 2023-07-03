@@ -43,6 +43,8 @@ console.log(user1.calculationAge(user2.age))
 
 //creo array per salvare i contatti
 const list=[]
+//array di padroni
+const padroni =[]
 
 //creazione della classe Pet
 class Pet{
@@ -55,14 +57,17 @@ constructor(_petName, _ownerName, _species, _breed){
 //creazione funzione (il padrone è lo stesso?)
 sameOwnerName(){
   
- if ( this.ownerName===ownerNameInput.value) {
-    return true
+ if ( this.ownerName ===padroni[1]) {
+return true
+
+    
  }
  else{
    return false
  }
 
 }
+
 }
 
 //creo la funzione che manderà a schermo i contatti
@@ -73,22 +78,33 @@ const addList=function(){
         const newLi= document.createElement("li")
         newLi.innerText = `${Pet.petName}- ${Pet.ownerName} - ${Pet.species} - ${Pet.breed}`
         ul.appendChild(newLi)
-   console.log(newLi)
+  
     });
 }
+
+
+
 //funzione che si avvia all'invio del bottone
 const form=document.querySelector("form")
 form.addEventListener("submit", function(e){
 e.preventDefault() //serve per bloccare il comportamento del form
 const contact= new Pet(petNameInput.value, ownerNameInput.value, speciesInput.value, breedInput.value)
 console.log(contact) 
+
+//push nell'array padrone
+padroni.push(contact.ownerName)
+console.log( "PADRONI",padroni)
+
 //avvio la funzione  sameOwnerName al click del bottone
  let button=document.querySelector(".inviaForm")
  button.addEventListener("click", function(){
     console.log(contact.sameOwnerName())
  })
 
-list.push(contact)// pusho nell'array
+
+
+
+list.push(contact)// push nell'array
 petNameInput.value = ""//svuoto dopo il click del tasto invio 
 ownerNameInput.value = ""
 speciesInput.value = ""
